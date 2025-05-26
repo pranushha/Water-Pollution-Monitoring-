@@ -1,0 +1,521 @@
+.userManagementContainer {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .userHeader {
+    margin-bottom: 20px;
+  }
+  
+  .userHeader h2 {
+    margin: 0 0 15px 0;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  
+  .tabsContainer {
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .tabButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-size: 15px;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+  }
+  
+  .tabButton:hover {
+    color: #e53935;
+  }
+  
+  .tabButton.activeTab {
+    color: #e53935;
+    border-bottom-color: #e53935;
+  }
+  
+  .tabIcon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .profilePanel,
+  .usersPanel {
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  .profileSection {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .profileSection h3 {
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .profileSection p {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .settingGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .settingLabel {
+    font-size: 15px;
+    font-weight: 500;
+  }
+  
+  .themeToggle {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .themeButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .themeButton.active {
+    background-color: #e6f7ff;
+    color: #1890ff;
+  }
+  
+  .themeIcon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .languageSelect {
+    padding: 8px 12px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    min-width: 150px;
+  }
+  
+  .toggleSwitch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+  }
+  
+  .toggleInput {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .toggleLabel {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .toggleLabel:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  .toggleInput:checked + .toggleLabel {
+    background-color: #1890ff;
+  }
+  
+  .toggleInput:checked + .toggleLabel:before {
+    transform: translateX(26px);
+  }
+  
+  .regionsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+  }
+  
+  .regionItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+  }
+  
+  .profileActions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .saveButton,
+  .resetButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .saveButton {
+    background-color: #e53935;
+    color: white;
+  }
+  
+  .saveButton:hover {
+    background-color: #d32f2f;
+  }
+  
+  .resetButton {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .resetButton:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .usersHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .usersHeader h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .addUserButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: #e53935;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .addUserButton:hover {
+    background-color: #d32f2f;
+  }
+  
+  .addUserIcon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .usersTable {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .tableHeader {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr 1fr;
+    background-color: #f0f0f0;
+    padding: 12px 15px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .tableBody {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tableRow {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr 1fr;
+    padding: 12px 15px;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+    align-items: center;
+  }
+  
+  .tableRow:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .roleBadge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .roleBadge.admin {
+    background-color: #e6f7ff;
+    color: #1890ff;
+  }
+  
+  .roleBadge.responder {
+    background-color: #f6ffed;
+    color: #52c41a;
+  }
+  
+  .roleBadge.analyst {
+    background-color: #fff7e6;
+    color: #fa8c16;
+  }
+  
+  .statusIndicator {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+  }
+  
+  .statusIndicator:before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+  }
+  
+  .statusIndicator.active:before {
+    background-color: #52c41a;
+  }
+  
+  .statusIndicator.inactive:before {
+    background-color: #d9d9d9;
+  }
+  
+  .actionButtons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .actionButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    border: none;
+    background-color: #f0f0f0;
+    color: #666;
+    cursor: pointer;
+  }
+  
+  .actionButton:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .rolesSection {
+    margin-top: 20px;
+  }
+  
+  .rolesSection h3 {
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .rolesTable {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .roleRow {
+    display: flex;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .roleHeader {
+    width: 200px;
+    padding: 15px;
+    background-color: #f0f0f0;
+  }
+  
+  .roleHeader h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .roleHeader p {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+  }
+  
+  .permissionsList {
+    flex: 1;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .permissionItem {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  .checkmark {
+    color: #52c41a;
+    margin-right: 8px;
+    font-weight: bold;
+  }
+  
+  .xmark {
+    color: #f5222d;
+    margin-right: 8px;
+    font-weight: bold;
+  }
+  
+  :global(.dark).userManagementContainer {
+    background-color: #222;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  :global(.dark).tabsContainer {
+    border-bottom-color: #333;
+  }
+  
+  :global(.dark).tabButton {
+    color: #aaa;
+  }
+  
+  :global(.dark).tabButton:hover {
+    color: #ff6b6b;
+  }
+  
+  :global(.dark).tabButton.activeTab {
+    color: #ff6b6b;
+    border-bottom-color: #ff6b6b;
+  }
+  
+  :global(.dark).profileSection {
+    background-color: #2a2a2a;
+  }
+  
+  :global(.dark).profileSection p {
+    color: #aaa;
+  }
+  
+  :global(.dark).themeButton {
+    background-color: #333;
+    color: #eee;
+  }
+  
+  :global(.dark).themeButton.active {
+    background-color: #1a365d;
+    color: #4da8ff;
+  }
+  
+  :global(.dark).languageSelect {
+    background-color: #333;
+    color: #eee;
+  }
+  
+  :global(.dark).toggleLabel {
+    background-color: #555;
+  }
+  
+  :global(.dark).resetButton {
+    background-color: #333;
+    color: #eee;
+  }
+  
+  :global(.dark).resetButton:hover {
+    background-color: #444;
+  }
+  
+  :global(.dark).usersTable {
+    background-color: #2a2a2a;
+  }
+  
+  :global(.dark).tableHeader {
+    background-color: #333;
+  }
+  
+  :global(.dark).tableRow {
+    border-top-color: #333;
+  }
+  
+  :global(.dark).tableRow:hover {
+    background-color: #333;
+  }
+  
+  :global(.dark).actionButton {
+    background-color: #333;
+    color: #aaa;
+  }
+  
+  :global(.dark).actionButton:hover {
+    background-color: #444;
+  }
+  
+  :global(.dark).roleRow {
+    background-color: #2a2a2a;
+  }
+  
+  :global(.dark).roleHeader {
+    background-color: #333;
+  }
+  
+  :global(.dark).roleHeader p {
+    color: #aaa;
+  }
+  
+  

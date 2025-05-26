@@ -1,0 +1,511 @@
+.alertSystemContainer {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    height: 160%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .alertHeader {
+    margin-bottom: 20px;
+  }
+  
+  .alertHeader h2 {
+    margin: 0 0 15px 0;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  
+  .tabsContainer {
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .tabButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-size: 15px;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+  }
+  
+  .tabButton:hover {
+    color: #e53935;
+  }
+  
+  .tabButton.activeTab {
+    color: #e53935;
+    border-bottom-color: #e53935;
+  }
+  
+  .tabIcon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .notificationsPanel,
+  .settingsPanel {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+  }
+  
+  .notificationsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .notificationsHeader h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .notificationControls {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .controlButton {
+    padding: 6px 12px;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  
+  .controlButton:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .filterSelect {
+    padding: 6px 12px;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  
+  .notificationsList {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .notificationItem {
+    display: flex;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .notificationItem:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .notificationItem.unread {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .notificationItem.critical {
+    border-left: 4px solid #e53935;
+  }
+  
+  .notificationItem.high {
+    border-left: 4px solid #ff9800;
+  }
+  
+  .notificationItem.moderate {
+    border-left: 4px solid #ffc107;
+  }
+  
+  .notificationIcon {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+  }
+  
+  .critical .notificationIcon {
+    background-color: #e53935;
+  }
+  
+  .high .notificationIcon {
+    background-color: #ff9800;
+  }
+  
+  .moderate .notificationIcon {
+    background-color: #ffc107;
+  }
+  
+  .notificationContent {
+    flex: 1;
+  }
+  
+  .notificationHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .notificationHeader h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .notificationTime {
+    font-size: 12px;
+    color: #888;
+  }
+  
+  .notificationContent p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .unreadIndicator {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #e53935;
+  }
+  
+  .broadcastPanel {
+    width: 300px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+  }
+  
+  .broadcastPanel h3 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .broadcastForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .formGroup label {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  
+  .formGroup input,
+  .formGroup select,
+  .formGroup textarea {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .formGroup textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+  
+  .broadcastButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    background-color: #e53935;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .broadcastButton:hover {
+    background-color: #d32f2f;
+  }
+  
+  .existingRules {
+    flex: 1;
+  }
+  
+  .rulesHeader {
+    margin-bottom: 15px;
+  }
+  
+  .rulesHeader h3 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .rulesHeader p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .rulesList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .ruleItem {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+  }
+  
+  .ruleHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .ruleHeader h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .ruleActions {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .toggleButton,
+  .deleteButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    border: none;
+    background-color: #f0f0f0;
+    color: #666;
+    cursor: pointer;
+  }
+  
+  .toggleButton.active {
+    background-color: #e6f7ff;
+    color: #1890ff;
+  }
+  
+  .deleteButton {
+    background-color: #fff0f0;
+    color: #e53935;
+  }
+  
+  .ruleCondition {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .ruleChannels {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .channelBadge {
+    padding: 4px 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #555;
+  }
+  
+  .addRulePanel {
+    width: 300px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+  }
+  
+  .addRulePanel h3 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .addIcon {
+    color: #e53935;
+  }
+  
+  .addRuleForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .channelOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .channelOption {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .addRuleButton {
+    padding: 10px;
+    background-color: #e53935;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .addRuleButton:hover {
+    background-color: #d32f2f;
+  }
+  
+  :global(.dark).alertSystemContainer {
+    background-color: #222;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  :global(.dark).tabsContainer {
+    border-bottom-color: #333;
+  }
+  
+  :global(.dark).tabButton {
+    color: #aaa;
+  }
+  
+  :global(.dark).tabButton:hover {
+    color: #ff6b6b;
+  }
+  
+  :global(.dark).tabButton.activeTab {
+    color: #ff6b6b;
+    border-bottom-color: #ff6b6b;
+  }
+  
+  :global(.dark).controlButton,
+  :global(.dark).filterSelect {
+    background-color: #333;
+    color: #eee;
+  }
+  
+  :global(.dark).controlButton:hover {
+    background-color: #444;
+  }
+  
+  :global(.dark).notificationItem {
+    background-color: #2a2a2a;
+  }
+  
+  :global(.dark).notificationItem:hover {
+    background-color: #333;
+  }
+  
+  :global(.dark).notificationItem.unread {
+    background-color: #222;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  :global(.dark).notificationTime {
+    color: #999;
+  }
+  
+  :global(.dark).notificationContent p {
+    color: #bbb;
+  }
+  
+  :global(.dark).broadcastPanel,
+  :global(.dark).addRulePanel {
+    background-color: #2a2a2a;
+  }
+  
+  :global(.dark).formGroup input,
+  :global(.dark).formGroup select,
+  :global(.dark).formGroup textarea {
+    background-color: #333;
+    border-color: #444;
+    color: #eee;
+  }
+  
+  :global(.dark).rulesHeader p {
+    color: #aaa;
+  }
+  
+  :global(.dark).ruleItem {
+    background-color: #2a2a2a;
+  }
+  
+  :global(.dark).toggleButton,
+  :global(.dark).deleteButton {
+    background-color: #333;
+    color: #aaa;
+  }
+  
+  :global(.dark).toggleButton.active {
+    background-color: #1a365d;
+    color: #4da8ff;
+  }
+  
+  :global(.dark).deleteButton {
+    background-color: #3a2a2a;
+    color: #ff6b6b;
+  }
+  
+  :global(.dark).ruleCondition {
+    color: #bbb;
+  }
+  
+  :global(.dark).channelBadge {
+    background-color: #333;
+    color: #bbb;
+  }
+  
+  
