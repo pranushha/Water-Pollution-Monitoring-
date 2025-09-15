@@ -1,7 +1,9 @@
 "use client"
 
 import { useEffect, useState, useRef } from "react"
-import { Layers, MapPin } from "lucide-react"
+import { Layers } from "lucide-react"
+import { MapContainer, TileLayer, Marker, Popup, CircleMarker } from "react-leaflet"
+import "leaflet/dist/leaflet.css"
 import styles from "../styles/map-view.module.css"
 
 // Use named export instead of default export
@@ -47,12 +49,9 @@ export function MapView() {
     },
   ]
 
-  // This would normally initialize a map library like Leaflet or Google Maps
+  // Log map type change (tile layer switches accordingly)
   useEffect(() => {
-    if (mapRef.current) {
-      // In a real implementation, we would initialize the map here
-      console.log("Map initialized with type:", mapType)
-    }
+    console.log("Map type:", mapType)
   }, [mapType])
 
   const getSeverityColor = (severity) => {
@@ -100,29 +99,57 @@ export function MapView() {
       </div>
 
       <div className={styles.mapContainer} ref={mapRef}>
-        {/* This would be replaced by an actual map in a real implementation */}
-        <div className={styles.mockMap}>
-          <div className={styles.mapPlaceholder}>
-            <p>Interactive Map Would Render Here</p>
-            <p className={styles.mapNote}>Using {mapType} view</p>
+        <MapContainer
+          center={[20.5937, 78.9629]}
+          zoom={4}
+          scrollWheelZoom={true}
+          style={{ width: "100%", height: "100%" }}
+        >
+          {mapType === "street" && (
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+          )}
+          {mapType === "terrain" && (
+            <TileLayer
+              attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url="https://tiles.stadiamaps.com/tiles/stamen_terrain/{z}/{x}/{y}.jpg"
+            />
+          )}
+          {mapType === "satellite" && (
+            <TileLayer
+              attribution='&copy; <a href="https://services.arcgisonline.com/">Esri</a>'
+              url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+            />
+          )}
 
-            {/* Mock disaster markers */}
-            {disasters.map((disaster) => (
-              <div
-                key={disaster.id}
-                className={styles.disasterMarker}
-                style={{
-                  left: `${((disaster.coordinates.lng + 180) / 360) * 100}%`,
-                  top: `${((90 - disaster.coordinates.lat) / 180) * 100}%`,
-                  backgroundColor: getSeverityColor(disaster.severity),
-                }}
-                onClick={() => setSelectedDisaster(disaster)}
+          {disasters.map((disaster) => (
+            <>
+              <CircleMarker
+                key={`cm-${disaster.id}`}
+                center={[disaster.coordinates.lat, disaster.coordinates.lng]}
+                pathOptions={{ color: getSeverityColor(disaster.severity) }}
+                radius={10}
+                eventHandlers={{ click: () => setSelectedDisaster(disaster) }}
+              />
+              <Marker
+                key={`m-${disaster.id}`}
+                position={[disaster.coordinates.lat, disaster.coordinates.lng]}
+                eventHandlers={{ click: () => setSelectedDisaster(disaster) }}
               >
-                <MapPin size={16} />
-              </div>
-            ))}
-          </div>
-        </div>
+                <Popup>
+                  <div style={{ minWidth: 200 }}>
+                    <strong>{disaster.title}</strong>
+                    <div>{disaster.location}</div>
+                    <div>Severity: {disaster.severity}</div>
+                    <div>Reported: {disaster.time}</div>
+                  </div>
+                </Popup>
+              </Marker>
+            </>
+          ))}
+        </MapContainer>
       </div>
 
       {selectedDisaster && (
