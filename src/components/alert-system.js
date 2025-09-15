@@ -138,40 +138,117 @@ export function AlertSystem() {
 
       {activeTab === "notifications" && (
         <div className={styles.notificationsPanel}>
-          <div className={styles.notificationsHeader}>
-            <h3>Recent Alerts</h3>
-            <div className={styles.notificationControls}>
-              <button className={styles.controlButton}>Mark All Read</button>
-              <select className={styles.filterSelect}>
-                <option value="all">All Alerts</option>
-                <option value="unread">Unread Only</option>
-                <option value="critical">Critical Only</option>
-              </select>
-            </div>
-          </div>
-
-          <div className={styles.notificationsList}>
-            {notifications.map((notification) => (
-              <div
-                key={notification.id}
-                className={`${styles.notificationItem} ${!notification.read ? styles.unread : ""} ${styles[notification.type]}`}
-                onClick={() => markAsRead(notification.id)}
-              >
-                <div className={styles.notificationIcon}>
-                  {notification.type === "critical" && <Bell className={styles.bellIcon} />}
-                  {notification.type === "high" && <Bell className={styles.bellIcon} />}
-                  {notification.type === "moderate" && <Bell className={styles.bellIcon} />}
-                </div>
-                <div className={styles.notificationContent}>
-                  <div className={styles.notificationHeader}>
-                    <h4>{notification.title}</h4>
-                    <span className={styles.notificationTime}>{notification.time}</span>
-                  </div>
-                  <p>{notification.message}</p>
-                </div>
-                {!notification.read && <div className={styles.unreadIndicator}></div>}
+          <div className={styles.notificationsColumn}>
+            <div className={styles.notificationsHeader}>
+              <h3>Recent Alerts</h3>
+              <div className={styles.notificationControls}>
+                <button className={styles.controlButton}>Mark All Read</button>
+                <select className={styles.filterSelect}>
+                  <option value="all">All Alerts</option>
+                  <option value="unread">Unread Only</option>
+                  <option value="critical">Critical Only</option>
+                </select>
               </div>
-            ))}
+            </div>
+
+            <div className={styles.notificationsList}>
+              {notifications.map((notification) => (
+                <div
+                  key={notification.id}
+                  className={`${styles.notificationItem} ${!notification.read ? styles.unread : ""} ${styles[notification.type]}`}
+                  onClick={() => markAsRead(notification.id)}
+                >
+                  <div className={styles.notificationIcon}>
+                    {notification.type === "critical" && <Bell className={styles.bellIcon} />}
+                    {notification.type === "high" && <Bell className={styles.bellIcon} />}
+                    {notification.type === "moderate" && <Bell className={styles.bellIcon} />}
+                  </div>
+                  <div className={styles.notificationContent}>
+                    <div className={styles.notificationHeader}>
+                      <h4>{notification.title}</h4>
+                      <span className={styles.notificationTime}>{notification.time}</span>
+                    </div>
+                    <p>{notification.message}</p>
+                  </div>
+                  {!notification.read && <div className={styles.unreadIndicator}></div>}
+                </div>
+              ))}
+            </div>
+
+            <div className={styles.sectionDivider}></div>
+
+            <div className={styles.allAlertsSection}>
+              <h3 className={styles.sectionTitle}>All Alerts</h3>
+
+              <div className={styles.alertGroup}>
+                <h4 className={styles.alertGroupTitle}>Critical</h4>
+                {notifications
+                  .filter((n) => n.type === "critical")
+                  .map((notification) => (
+                    <div
+                      key={`critical-${notification.id}`}
+                      className={`${styles.notificationItem} ${styles.critical}`}
+                    >
+                      <div className={styles.notificationIcon}>
+                        <Bell className={styles.bellIcon} />
+                      </div>
+                      <div className={styles.notificationContent}>
+                        <div className={styles.notificationHeader}>
+                          <h4>{notification.title}</h4>
+                          <span className={styles.notificationTime}>{notification.time}</span>
+                        </div>
+                        <p>{notification.message}</p>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+
+              <div className={styles.alertGroup}>
+                <h4 className={styles.alertGroupTitle}>High</h4>
+                {notifications
+                  .filter((n) => n.type === "high")
+                  .map((notification) => (
+                    <div
+                      key={`high-${notification.id}`}
+                      className={`${styles.notificationItem} ${styles.high}`}
+                    >
+                      <div className={styles.notificationIcon}>
+                        <Bell className={styles.bellIcon} />
+                      </div>
+                      <div className={styles.notificationContent}>
+                        <div className={styles.notificationHeader}>
+                          <h4>{notification.title}</h4>
+                          <span className={styles.notificationTime}>{notification.time}</span>
+                        </div>
+                        <p>{notification.message}</p>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+
+              <div className={styles.alertGroup}>
+                <h4 className={styles.alertGroupTitle}>Moderate</h4>
+                {notifications
+                  .filter((n) => n.type === "moderate")
+                  .map((notification) => (
+                    <div
+                      key={`moderate-${notification.id}`}
+                      className={`${styles.notificationItem} ${styles.moderate}`}
+                    >
+                      <div className={styles.notificationIcon}>
+                        <Bell className={styles.bellIcon} />
+                      </div>
+                      <div className={styles.notificationContent}>
+                        <div className={styles.notificationHeader}>
+                          <h4>{notification.title}</h4>
+                          <span className={styles.notificationTime}>{notification.time}</span>
+                        </div>
+                        <p>{notification.message}</p>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
           </div>
 
           <div className={styles.broadcastPanel}>
