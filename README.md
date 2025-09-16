@@ -1,59 +1,38 @@
-# 🌍 Disaster Analytics & Insights 🔥🌊
+# 🌊 Disaster Track + Blue Pulse  
+**Water Pollution Monitoring and Prediction System**
 
-**Disaster Analytics & Insights** is a real-time, AI-powered disaster intelligence platform designed to help users **track**, **analyze**, and **predict** disasters across the globe. Built for researchers, first responders, and policymakers, the platform provides a powerful dashboard for visualizing and acting on disaster data.
-
----
-
-## 🧠 Approach
-
-An AI-driven platform that:
-- **Collects** disaster-related data from social media, news portals, and government sources.
-- **Verifies** the credibility of disaster information using deep learning and NLP.
-- **Categorizes** disasters and assesses severity in real-time.
-- **Visualizes** analytics through an interactive and dynamic dashboard.
-- **Alerts** users via SMS, push, or email for high-impact events.
+This project combines **Disaster Track** and **Blue Pulse** into a single platform for monitoring and predicting water pollution trends.  
+The system provides a **Streamlit-based dashboard** for visualization, monitoring, and awareness, along with an **ARIMA forecasting model** for future water quality predictions.
 
 ---
 
-## 🔥 Key Features
-
-### 📡 Disaster Tracking
-- View **historical** and **real-time** disaster data by **type**, **region**, and **time**.
-- Aggregates news, tweets, images, and videos from trusted and public sources.
-
-### 📈 Visual Analytics
-- Interactive **bar, line, and pie charts** showing:
-  - Frequency by state/year
-  - Severity metrics
-  - Geolocation mapping
-- Region-based metric filtering
-
-### 🤖 AI Predictions
-- Forecasts risks using **ARIMA** and **LSTM** models trained on historical patterns.
-- Categorizes disasters as **natural**, **man-made**, or **health-related**.
-- Validates misinformation via **NLP fact-checking** and **reverse image search**.
-
-### 🧰 Data Export
-- Download analytics and reports as `.txt` files.
-- Save filtered insights for offline reporting.
-
-### 📬 Smart Notifications
-- Get real-time alerts via **SMS**, **email**, and **push** notifications.
-- AI-based severity detection triggers threshold alerts.
+## 🚀 Features
+- 📊 **Interactive Dashboard** with Streamlit to track water quality metrics (pH, DO, Turbidity, Temperature).  
+- 🗺 **Geospatial Visualization** using PyDeck to locate monitoring points.  
+- 📈 **Trend Analysis & ETS Decomposition** to understand historical data patterns.  
+- 🤖 **AI Insights & Chatbot** for environmental awareness and automated reporting.  
+- 🔮 **ARIMA Forecasting Model** for 7-day water quality predictions.  
+- 📱 **Twilio Alerts (Optional)** to send SMS notifications.  
 
 ---
 
-## 💻 Tech Stack
+## ⚙️ Setup Instructions
 
-| Component       | Technologies Used                      |
-|----------------|------------------------------------------|
-| **Frontend**    | React.js, Lucide Icons, Tailwind CSS     |
-| **Backend**     | Node.js, Express.js                     |
-| **Real-Time**   | WebSockets for live disaster updates     |
-| **Database**    | MongoDB (NoSQL)                          |
-| **AI/ML Models**| ARIMA, LSTM, spaCy, BERT, OpenCV         |
-| **Maps**        | Mapbox or Bing Maps for GIS integration  |
-| **Alerts**      | Twilio, Firebase, SMTP APIs              |
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/pranushha/Water-Pollution-Monitoring-.git
 
+Running the Project
 
+npm install 
+npm start 
 
+Run the Streamlit Dashboard
+
+From the backend/ directory:
+streamlit run dashboard.py
+
+Run the ARIMA Model Separately
+
+From the backend/models/ directory:
+python arima_model.py
