@@ -21,8 +21,8 @@ export function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <h1>DisasterTrack</h1>
-        <span className={styles.tagline}>Real-time disaster monitoring</span>
+        <h1>BluePulse</h1>
+        <span className={styles.tagline}>Real-time water pollution monitoring</span>
       </div>
 
       <div className={styles.controls}>
