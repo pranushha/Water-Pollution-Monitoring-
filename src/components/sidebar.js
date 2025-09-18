@@ -1,12 +1,12 @@
 "use client"
 
-import { AlertTriangle, Map, BarChart2, Bell, UserCog } from "lucide-react"
+import { Droplet, Map, BarChart2, Bell, UserCog } from "lucide-react"
 import styles from "../styles/sidebar.module.css"
 
 // Use named export instead of default export
 export function SideBar({ activePanel, setActivePanel }) {
   const menuItems = [
-    { id: "feed", label: "Disaster Feed", icon: <AlertTriangle /> },
+    { id: "feed", label: "Water Quality Feed", icon: <Droplet /> },
     { id: "analytics", label: "Analytics", icon: <BarChart2 /> },
     { id: "alerts", label: "Alert System", icon: <Bell /> },
     { id: "user", label: "User Management", icon: <UserCog /> },

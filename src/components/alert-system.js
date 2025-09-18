@@ -10,24 +10,24 @@ export function AlertSystem() {
   const [notifications, setNotifications] = useState([
     {
       id: 1,
-      title: "Critical Alert: 7.2 Earthquake",
-      message: "7.2 Earthquake detected in Tokyo, Japan – Immediate response needed!",
+      title: "High Turbidity Event",
+      message: "High Turbidity Event in Kaveri River at Mysuru Station – Immediate response needed!",
       time: "10 mins ago",
       read: false,
       type: "critical",
     },
     {
       id: 2,
-      title: "High Alert: Wildfire Spreading",
-      message: "Wildfire in Northern California expanding rapidly. Evacuation orders issued.",
+      title: "Industrial Discharge",
+      message: "Industrial Discharge in Ganga River at Kanpur Station. Prevent using water for agriculture purpose. ",
       time: "45 mins ago",
       read: true,
       type: "high",
     },
     {
       id: 3,
-      title: "Moderate Alert: Flood Warning",
-      message: "Flood warning issued for coastal areas of Florida due to approaching storm.",
+      title: "Chemical Spill",
+      message: "Chemical spill in Narmada River at Jabalpur Station. Water not suitable for drinking purpose.",
       time: "2 hours ago",
       read: true,
       type: "moderate",
@@ -37,22 +37,22 @@ export function AlertSystem() {
   const [alertRules, setAlertRules] = useState([
     {
       id: 1,
-      name: "Earthquake Alerts",
-      condition: "Earthquake > 5.0 magnitude within 100km",
+      name: "Industrial Discharge",
+      condition: "Any industrial discharge within Ganga basin",
       channels: ["Push", "SMS", "Email"],
       active: true,
     },
     {
       id: 2,
-      name: "Wildfire Monitoring",
-      condition: "Any wildfire within monitored regions",
+      name: "Agricultural Runoff",
+      condition: "Any agricultural runoff within monitored regions",
       channels: ["Push", "Email"],
       active: true,
     },
     {
       id: 3,
-      name: "Tsunami Warnings",
-      condition: "Any tsunami warning in Pacific region",
+      name: "Low Dissolved Oxygen Warning",
+      condition: "Low dissolved oxygen warning in Sindh region",
       channels: ["Push", "SMS", "Email"],
       active: true,
     },
@@ -275,9 +275,9 @@ export function AlertSystem() {
                 <label>Target Region</label>
                 <select>
                   <option value="all">All Regions</option>
-                  <option value="namerica">North America</option>
-                  <option value="europe">Europe</option>
-                  <option value="asia">Asia</option>
+                  <option value="ganga basin">Ganga Basin</option>
+                  <option value="yamuna basin">Yamuna Basin</option>
+                  <option value="brahmaputra basin">Brahmaputra Basin</option>
                 </select>
               </div>
               <button className={styles.broadcastButton}>
@@ -339,7 +339,7 @@ export function AlertSystem() {
                 <label>Rule Name</label>
                 <input
                   type="text"
-                  placeholder="E.g., Major Earthquake Alert"
+                  placeholder="E.g., Major Chemical Spill Alert"
                   value={newRule.name}
                   onChange={(e) => setNewRule({ ...newRule, name: e.target.value })}
                 />
@@ -348,7 +348,7 @@ export function AlertSystem() {
                 <label>Condition</label>
                 <input
                   type="text"
-                  placeholder="E.g., Earthquake > 6.0 magnitude within 200km"
+                  placeholder="E.g., Regions near Narmada River within 200km"
                   value={newRule.condition}
                   onChange={(e) => setNewRule({ ...newRule, condition: e.target.value })}
                 />

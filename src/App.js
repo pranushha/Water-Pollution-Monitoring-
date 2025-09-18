@@ -4,6 +4,7 @@ import DisasterFeed from "./components/disaster-feed";
 import MapView from "./components/map-view";
 import Analytics from "./components/analytics";
 import AlertSystem from "./components/alert-system";
+import AlertSystemNC from "./components/alert-system-nc";
 import UserManagement from "./components/user-management";
 import Sidebar from "./components/sidebar";
 import Header from "./components/header";
@@ -20,7 +21,7 @@ function App() {
           <Route path="/feed" element={<DisasterFeed />} />
           <Route path="/map" element={<MapView />} />
           <Route path="/analytics" element={<Analytics />} />
-          <Route path="/alerts" element={<AlertSystem />} />
+          <Route path="/alerts" element={<AlertSystemNC />} />
           <Route path="/user-management" element={<UserManagement />} />
         </Routes>
       </div>
@@ -29,3 +30,21 @@ function App() {
 }
 
 export default App;
+
+/* 
+import React, { useState } from "react";
+import WaterQualityLogin from "./components/login";
+
+export default function App() {
+  const [user, setUser] = useState(null);
+
+  return (
+    <div>
+      {!user ? (
+        <WaterQualityLogin onLogin={setUser} />
+      ) : (
+        <h1>Welcome, {user}!</h1>
+      )}
+    </div>
+  );
+} */

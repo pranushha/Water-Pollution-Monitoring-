@@ -4,6 +4,7 @@ import { useState } from "react"
 import DisasterFeed from '../components/disaster-feed';
 import Analytics from '../components/analytics';
 import AlertSystem from '../components/alert-system';
+import AlertSystemNC from '../components/alert-system-nc';
 import UserManagement from '../components/user-management';
 import Sidebar from '../components/sidebar';
 import Header from '../components/header';
@@ -20,14 +21,15 @@ export default function Dashboard() {
       case "analytics":
         return <Analytics />
       case "alerts":
-        return <AlertSystem />
+        return <AlertSystemNC />
       case "user":
         return <UserManagement />
       default:
         return <DisasterFeed />
     }
-  }
+  };
 
+  
   return (
     <div className={styles.dashboardContainer}>
       <Header />

@@ -1,0 +1,200 @@
+.alertSystemContainer {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    height: 210%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .alertHeader {
+    margin-bottom: 20px;
+  }
+  
+  .alertHeader h2 {
+    margin: 0 0 15px 0;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  
+  .tabsContainer {
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .tabButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-size: 15px;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+  }
+  
+  .tabButton:hover {
+    color: #e53935;
+  }
+  
+  .tabButton.activeTab {
+    color: #e53935;
+    border-bottom-color: #e53935;
+  }
+  
+  .tabIcon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .notificationsPanel,
+  .settingsPanel {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+  }
+  
+  .notificationsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .notificationsHeader h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .notificationControls {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .controlButton {
+    padding: 6px 12px;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  
+  .controlButton:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .filterSelect {
+    padding: 6px 12px;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  
+  .notificationsList {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .notificationItem {
+    display: flex;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .notificationItem:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .notificationItem.unread {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .notificationItem.critical {
+    border-left: 4px solid #e53935;
+  }
+  
+  .notificationItem.high {
+    border-left: 4px solid #ff9800;
+  }
+  
+  .notificationItem.moderate {
+    border-left: 4px solid #ffc107;
+  }
+  
+  .notificationIcon {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+  }
+  
+  .critical .notificationIcon {
+    background-color: #e53935;
+  }
+  
+  .high .notificationIcon {
+    background-color: #ff9800;
+  }
+  
+  .moderate .notificationIcon {
+    background-color: #ffc107;
+  }
+  
+  .notificationContent {
+    flex: 1;
+  }
+  
+  .notificationHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .notificationHeader h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .notificationTime {
+    font-size: 12px;
+    color: #888;
+  }
+  
+  .notificationContent p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .unreadIndicator {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #e53935;
+  }
+  

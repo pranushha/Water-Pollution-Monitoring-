@@ -8,8 +8,8 @@ import styles from "../styles/header.module.css"
 export function Header() {
   const [darkMode, setDarkMode] = useState(false)
   const [notifications, setNotifications] = useState([
-    { id: 1, message: "🚨 [Critical Alert] 7.2 Earthquake detected in Tokyo, Japan", time: "2 mins ago" },
-    { id: 2, message: "🔥 New wildfire reported in Northern California", time: "15 mins ago" },
+    { id: 1, message: "🚨 High Turbidity Event in Kaveri River, Mysuru Station", time: "3 mins ago" },
+    { id: 2, message: "🏭 Industrial Discharge in Ganga River, Kanpur Station", time: "15 mins ago" },
   ])
   const [showNotifications, setShowNotifications] = useState(false)
 
@@ -22,7 +22,7 @@ export function Header() {
     <header className={styles.header}>
       <div className={styles.logo}>
         <h1>BluePulse</h1>
-        <span className={styles.tagline}>Real-time water pollution monitoring</span>
+        <span className={styles.tagline}>Real-time water quality monitoring</span>
       </div>
 
       <div className={styles.controls}>

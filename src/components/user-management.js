@@ -43,6 +43,14 @@ export function UserManagement() {
       status: "Inactive",
       lastActive: "2 days ago",
     },
+    {
+      id: 4,
+      name: "Tanvi Kirloskar",
+      email: "tanvi.k@gmail.com",
+      role: "Citizen",
+      status: "Inactive",
+      lastActive: "1 week ago",
+    },
   ])
 
   const toggleRegion = (region) => {
@@ -284,7 +292,7 @@ export function UserManagement() {
                    <span className={styles.xmark}>✗</span> Send Updates
                   </div>
                   <div className={styles.permissionItem}>
-                    <span className={styles.checkmark}>✓</span> View Map
+                    <span className={styles.checkmark}>✓</span> View Analytics
                   </div>
                   <div className={styles.permissionItem}>
                     <span className={styles.xmark}>✗</span> Manage Users

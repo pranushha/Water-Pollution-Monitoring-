@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Search, Filter, ArrowUpDown, AlertTriangle, Flame, Droplet } from "lucide-react"
+import { Search, Filter, ArrowUpDown, AlertTriangle, Factory, Wind, Leaf, FlaskConical, Droplet } from "lucide-react"
 import styles from "../styles/disaster-feed.module.css"
 
 // Use named export instead of default export
@@ -13,9 +13,9 @@ export function DisasterFeed() {
   const disasterEvents = [
     {
       id: 1,
-      type: "earthquake",
-      title: "6.5 Magnitude Earthquake",
-      location: "Los Angeles, CA",
+      type: "high turbidity event",
+      title: "High Turbidity Event",
+      location: "Kaveri River, Mysuru Station",
       severity: "critical",
       time: "10 mins ago",
       credibility: 92,
@@ -23,43 +23,53 @@ export function DisasterFeed() {
     },
     {
       id: 2,
-      type: "wildfire",
-      title: "Wildfire",
-      location: "Australia",
+      type: "low dissolved oxygen",
+      title: "Low Dissolved Oxygen",
+      location: "Indus River, Sindh Station",
       severity: "high",
       time: "25 mins ago",
       credibility: 88,
-      icon: <Flame />,
+      icon: <Wind />,
     },
     {
       id: 3,
-      type: "tsunami",
-      title: "Tsunami Warning",
-      location: "Japan",
+      type: "agricultural runoff",
+      title: "Agricultural Runoff",
+      location: "Brahmaputra River, Guwahati Station",
       severity: "moderate",
-      time: "1 hour ago",
-      credibility: 75,
-      icon: <Droplet />,
+      time: "3 hour ago",
+      credibility: 80,
+      icon: <Leaf />,
     },
     {
       id: 4,
-      type: "earthquake",
-      title: "5.2 Magnitude Earthquake",
-      location: "Mexico City, Mexico",
+      type: "sewage overflow",
+      title: "Sewage Overflow",
+      location: "Yamuna River, Delhi Station",
       severity: "moderate",
       time: "2 hours ago",
       credibility: 85,
-      icon: <AlertTriangle />,
+      icon: <Droplet />,
     },
     {
       id: 5,
-      type: "wildfire",
-      title: "Forest Fire",
-      location: "California, USA",
+      type: "industrial discharge",
+      title: "Industrial Discharge",
+      location: "Ganga River, Kanpur Station",
       severity: "high",
       time: "3 hours ago",
-      credibility: 90,
-      icon: <Flame />,
+      credibility: 92,
+      icon: <Factory />,
+    },
+    {
+    id: 6,
+      type: "chemical spill",
+      title: "Chemical Spill",
+      location: "Narmada River, Jabalpur Station",
+      severity: "moderate",
+      time: "10 mins ago",
+      credibility: 83,
+      icon: <FlaskConical />,
     },
   ]
 
@@ -114,7 +124,7 @@ export function DisasterFeed() {
           <Search className={styles.searchIcon} />
           <input
             type="text"
-            placeholder="Search by disaster or location..."
+            placeholder="Search by event or location..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -125,9 +135,12 @@ export function DisasterFeed() {
             <Filter className={styles.filterIcon} />
             <select value={filterType} onChange={(e) => setFilterType(e.target.value)}>
               <option value="all">All Types</option>
-              <option value="earthquake">Earthquake</option>
-              <option value="wildfire">Wildfire</option>
-              <option value="tsunami">Tsunami</option>
+              <option value="sewage overflow">Sewage Overflow</option>
+              <option value="industrial discharge">Industrial Discharge</option>
+              <option value="agricultural runoff">Agricultural Runoff</option>
+              <option value="low dissolved oxygen">Low Dissolved Oxygen</option>
+              <option value="high turbidity event">High Turbidity Event</option>
+              <option value="chemical spill">Chemical Spill</option>
             </select>
           </div>
 
