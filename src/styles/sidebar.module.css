@@ -36,14 +36,14 @@
   
   .navButton:hover {
     background-color: #f5f5f5;
-    color: #e53935;
+    color: #20a1c4;
   }
   
   .navButton.active {
-    background-color: #feeeed;
-    color: #e53935;
+    background-color: #ecfeff;
+    color: #20a1c4;
     font-weight: 500;
-    border-left: 3px solid #e53935;
+    border-left: 3px solid #20a1c4;
   }
   
   .statusSection {

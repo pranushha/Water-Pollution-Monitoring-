@@ -105,8 +105,8 @@ export function DisasterFeed() {
   return (
     <div className={styles.disasterFeedContainer}>
       <div className={styles.feedHeader}>
-        <h2>Real-Time Disaster Feed</h2>
-        <p>Live updates of disasters happening globally</p>
+        <h2>Real-Time Water Quality Feed</h2>
+        <p>Live Monitoring of Water Pollution Worldwide</p>
       </div>
 
       <div className={styles.controls}>

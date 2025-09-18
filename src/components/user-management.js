@@ -10,36 +10,36 @@ export function UserManagement() {
   const [darkMode, setDarkMode] = useState(false)
   const [language, setLanguage] = useState("english")
   const [regions, setRegions] = useState({
-    asia: true,
-    namerica: true,
-    europe: false,
-    samerica: false,
-    africa: false,
-    australia: false,
+    ganga: true,
+    yamuna: true,
+    brahmaputra: false,
+    indus: true,
+    kaveri: false,
+    narmada: false,
   })
 
   const [users, setUsers] = useState([
     {
       id: 1,
       name: "Pranusha Shinde",
-      email: "pranushashinde@gmail.com",
-      role: "Admin",
+      email: "pranusha.s@gmail.com",
+      role: "Goverment official",
       status: "Active",
       lastActive: "5 mins ago",
     },
     {
       id: 2,
       name: "Aayushi Maindalkar",
-      email: "aayushi.m@example.com",
-      role: "Responder",
+      email: "aayushi.m@gmail.com",
+      role: "Citizen",
       status: "Active",
       lastActive: "1 hour ago",
     },
     {
       id: 3,
       name: "Nupur Sapar",
-      email: "nupur.saper@example.com",
-      role: "Analyst",
+      email: "nupur.sapar@gmail.com",
+      role: "NGO",
       status: "Inactive",
       lastActive: "2 days ago",
     },
@@ -107,10 +107,10 @@ export function UserManagement() {
               <div className={styles.settingLabel}>Language</div>
               <select className={styles.languageSelect} value={language} onChange={(e) => setLanguage(e.target.value)}>
                 <option value="english">English</option>
-                <option value="spanish">Spanish</option>
-                <option value="french">French</option>
-                <option value="japanese">Japanese</option>
-                <option value="chinese">Chinese</option>
+                <option value="hindi">Hindi</option>
+                <option value="marathi">Marathi</option>
+                <option value="kannada">Kannada</option>
+                <option value="telugu">Telugu</option>
               </select>
             </div>
           </div>
@@ -143,48 +143,48 @@ export function UserManagement() {
           </div>
 
           <div className={styles.profileSection}>
-            <h3>Monitored Regions</h3>
-            <p>Select regions to receive priority alerts</p>
+            <h3>Monitored Rivers</h3>
+            <p>Select rivers to receive priority alerts</p>
 
             <div className={styles.regionsGrid}>
               <div className={styles.regionItem}>
-                <input type="checkbox" id="asia" checked={regions.asia} onChange={() => toggleRegion("asia")} />
-                <label htmlFor="asia">Asia</label>
+                <input type="checkbox" id="ganga" checked={regions.ganga} onChange={() => toggleRegion("ganga")} />
+                <label htmlFor="ganga">Ganga</label>
               </div>
               <div className={styles.regionItem}>
                 <input
                   type="checkbox"
-                  id="namerica"
-                  checked={regions.namerica}
-                  onChange={() => toggleRegion("namerica")}
+                  id="yamuna"
+                  checked={regions.yamuna}
+                  onChange={() => toggleRegion("yamuna")}
                 />
-                <label htmlFor="namerica">North America</label>
+                <label htmlFor="brahmaputra">Yamuna</label>
               </div>
               <div className={styles.regionItem}>
-                <input type="checkbox" id="europe" checked={regions.europe} onChange={() => toggleRegion("europe")} />
-                <label htmlFor="europe">Europe</label>
+                <input type="checkbox" id="brahmaputra" checked={regions.brahmaputra} onChange={() => toggleRegion("brahmaputra")} />
+                <label htmlFor="brahmaputra">Brahmaputra</label>
               </div>
               <div className={styles.regionItem}>
                 <input
                   type="checkbox"
-                  id="samerica"
-                  checked={regions.samerica}
-                  onChange={() => toggleRegion("samerica")}
+                  id=""
+                  checked={regions.indus}
+                  onChange={() => toggleRegion("indus")}
                 />
-                <label htmlFor="samerica">South America</label>
+                <label htmlFor="indus">Indus</label>
               </div>
               <div className={styles.regionItem}>
-                <input type="checkbox" id="africa" checked={regions.africa} onChange={() => toggleRegion("africa")} />
-                <label htmlFor="africa">Africa</label>
+                <input type="checkbox" id="kaveri" checked={regions.kaveri} onChange={() => toggleRegion("kaveri")} />
+                <label htmlFor="kaveri">Kaveri</label>
               </div>
               <div className={styles.regionItem}>
                 <input
                   type="checkbox"
-                  id="australia"
-                  checked={regions.australia}
-                  onChange={() => toggleRegion("australia")}
+                  id="narmada"
+                  checked={regions.narmada}
+                  onChange={() => toggleRegion("narmada")}
                 />
-                <label htmlFor="australia">Australia</label>
+                <label htmlFor="narmada">Narmada</label>
               </div>
             </div>
           </div>
@@ -252,7 +252,7 @@ export function UserManagement() {
             <div className={styles.rolesTable}>
               <div className={styles.roleRow}>
                 <div className={styles.roleHeader}>
-                  <h4>Admin</h4>
+                  <h4>Goverment official</h4>
                   <p>Full system access</p>
                 </div>
                 <div className={styles.permissionsList}>
@@ -273,7 +273,7 @@ export function UserManagement() {
 
               <div className={styles.roleRow}>
                 <div className={styles.roleHeader}>
-                  <h4>Responder</h4>
+                  <h4>Citizen</h4>
                   <p>Field response team</p>
                 </div>
                 <div className={styles.permissionsList}>
@@ -281,7 +281,7 @@ export function UserManagement() {
                     <span className={styles.checkmark}>✓</span> View Alerts
                   </div>
                   <div className={styles.permissionItem}>
-                    <span className={styles.checkmark}>✓</span> Send Updates
+                   <span className={styles.xmark}>✗</span> Send Updates
                   </div>
                   <div className={styles.permissionItem}>
                     <span className={styles.checkmark}>✓</span> View Map
@@ -294,7 +294,7 @@ export function UserManagement() {
 
               <div className={styles.roleRow}>
                 <div className={styles.roleHeader}>
-                  <h4>Analyst</h4>
+                  <h4>NGO</h4>
                   <p>Data analysis only</p>
                 </div>
                 <div className={styles.permissionsList}>

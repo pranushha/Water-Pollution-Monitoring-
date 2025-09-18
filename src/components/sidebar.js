@@ -7,7 +7,6 @@ import styles from "../styles/sidebar.module.css"
 export function SideBar({ activePanel, setActivePanel }) {
   const menuItems = [
     { id: "feed", label: "Disaster Feed", icon: <AlertTriangle /> },
-    { id: "map", label: "Map View", icon: <Map /> },
     { id: "analytics", label: "Analytics", icon: <BarChart2 /> },
     { id: "alerts", label: "Alert System", icon: <Bell /> },
     { id: "user", label: "User Management", icon: <UserCog /> },

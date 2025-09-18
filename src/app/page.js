@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import DisasterFeed from '../components/disaster-feed';
-import MapView from '../components/map-view';
 import Analytics from '../components/analytics';
 import AlertSystem from '../components/alert-system';
 import UserManagement from '../components/user-management';
@@ -18,8 +17,6 @@ export default function Dashboard() {
     switch (activePanel) {
       case "feed":
         return <DisasterFeed />
-      case "map":
-        return <MapView />
       case "analytics":
         return <Analytics />
       case "alerts":
