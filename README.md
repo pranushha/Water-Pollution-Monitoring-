@@ -14,6 +14,7 @@ The system provides a **Streamlit-based dashboard** for visualization, monitorin
 - 🔮 **ARIMA Forecasting Model** for 7-day water quality predictions.  
 - 📱 **Twilio Alerts (Optional)** to send SMS notifications.  
 
+![alt text](image.png)
 ---
 
 ## ⚙️ Setup Instructions
@@ -30,6 +31,10 @@ npm start
 Run the Streamlit Dashboard
 
 From the backend/ directory:
+pip install streamlit-autorefresh
+
+pip install cohere
+
 streamlit run dashboard.py
 
 Run the ARIMA Model Separately
