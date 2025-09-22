@@ -9,6 +9,7 @@ export function SideBar({ activePanel, setActivePanel }) {
     { id: "feed", label: "Water Quality Feed", icon: <Droplet /> },
     { id: "analytics", label: "Analytics", icon: <BarChart2 /> },
     { id: "alerts", label: "Alert System", icon: <Bell /> },
+   // { id: "alerts, label: "Alert System", icon : <Bell /> },
     { id: "user", label: "User Management", icon: <UserCog /> },
   ]
 
