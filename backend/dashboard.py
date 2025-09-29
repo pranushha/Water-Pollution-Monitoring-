@@ -11,6 +11,7 @@ import pydeck as pdk
 import requests
 from streamlit_autorefresh import st_autorefresh
 import cohere
+from twilio.rest import Client
 
 # Page Configuration
 st.set_page_config(
@@ -191,11 +192,11 @@ with tab_current:
         fig.update_layout(height=200, margin=dict(t=40, b=10, l=10, r=10))
         gauge_placeholders[metric].plotly_chart(fig, use_container_width=True)
 
-# Chatbot Integration
-st.markdown("### 🤖 AI Chatbot for Water Pollution Awareness")
+    # Chatbot Integration
+    st.markdown("### 🤖 AI Chatbot for Water Pollution Awareness")
 
-# Single text input with a unique key
-user_query = st.text_input("Ask me anything about water pollution:", key="chatbot_input")
+    # Single text input with a unique key
+    user_query = st.text_input("Ask me anything about water pollution:", key="chatbot_input")
 
 # Initialize Cohere client
 COHERE_API_KEY = "2LogJN5ScpiJFslWug0XV9E5TEGVjcfNSgtGeZ35"
@@ -235,6 +236,45 @@ if st.button("Ask Chatbot", key="ask_chatbot_button"):
         "</div>",
         unsafe_allow_html=True
     )
+
+
+# Twilio credentials
+account_sid = "AC23b5df062f2915fcf14c5c3dcf1068a5"
+auth_token = "85f331f2fe15b1c13697e09a12795013"   # 🔒 keep secret (e.g., use st.secrets)
+twilio_number = "+15342009153"  # Your Twilio phone number
+
+# --- Twilio Alerts UI Element ---
+st.markdown("### 🚨 Twilio Alerts")
+st.markdown(
+    "<div style='background-color: #ffffff; border: 1px solid #e0e0e0; "
+    "box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); padding: 10px; border-radius: 8px;'>"
+    "<strong style='color: black;'>Stay Informed!</strong> "
+    "<span style='color: black;'>Receive real-time water quality alerts on your phone.</span>"
+    "</div>",
+    unsafe_allow_html=True
+)
+
+# Input fields
+target_number = st.text_input("📱 Enter your phone number (with country code)", "+91XXXXXXXXXX")
+alert_message = st.text_area("✉️ Alert Message", "Test alert: Water quality exceeded safe limits!")
+
+# Send button
+if st.button("Send SMS Alert"):
+    if target_number.strip() and alert_message.strip():
+        try:
+            client = Client(account_sid, auth_token)
+            message = client.messages.create(
+                body=alert_message,
+                from_=twilio_number,
+                to=target_number.strip()
+            )
+            st.success(f"✅ Alert sent successfully! (SID: {message.sid})")
+        except Exception as e:
+            st.error(f"❌ Failed to send alert: {e}")
+    else:
+        st.warning("⚠️ Please enter both phone number and message before sending.")
+
+    
 
     # Report Button (for Current tab as well)
     if st.button("Generate Report", key="report_current"):

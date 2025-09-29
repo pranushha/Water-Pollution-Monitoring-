@@ -21,7 +21,7 @@ export default function Dashboard() {
       case "analytics":
         return <Analytics />
       case "alerts":
-        return <AlertSystemNC />
+        return <AlertSystem />
       case "user":
         return <UserManagement />
       default:

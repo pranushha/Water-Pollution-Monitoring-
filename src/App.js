@@ -21,7 +21,7 @@ function App() {
           <Route path="/feed" element={<DisasterFeed />} />
           <Route path="/map" element={<MapView />} />
           <Route path="/analytics" element={<Analytics />} />
-          <Route path="/alerts" element={<AlertSystemNC />} />
+          <Route path="/alerts" element={<AlertSystem />} />
           <Route path="/user-management" element={<UserManagement />} />
         </Routes>
       </div>
