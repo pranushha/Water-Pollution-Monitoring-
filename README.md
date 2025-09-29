@@ -44,3 +44,11 @@ Run the ARIMA Model Separately
 
 From the backend/models/ directory:
 python arima_model.py
+
+
+Versions: 
+
+Python 3.13.1
+
+Node v22.13.1
+
