@@ -150,7 +150,7 @@ with tab_current:
 
     # Only refresh if live feed is on
     if st.session_state.live_feed_on:
-        st_autorefresh(interval=3000, key="live_feed")  # refresh every 3s
+        st_autorefresh(interval=10000, key="live_feed")  # refresh every 3s
 
     st.markdown("### 📊 Live Water Quality Metrics")
 
